@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>I'm Sorry</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffe6e6;
+      overflow: hidden;
+      font-family: 'Great Vibes', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .apology-box {
+      text-align: center;
+      color: #990000;
+      animation: fadeIn 2s ease-in;
+    }
+
+    .apology-box h1 {
+      font-size: 60px;
+      text-shadow: 0 0 10px #ffcccc;
+    }
+
+    .apology-box p {
+      font-size: 24px;
+      margin-top: 10px;
+    }
+
+    .apology-box button {
+      margin-top: 30px;
+      font-size: 18px;
+      padding: 10px 20px;
+      border: none;
+      background-color: #ff9999;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .apology-box button:hover {
+      background-color: #ff6666;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .heart {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 6s linear infinite;
+      opacity: 0.5;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -7.5px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -7.5px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        bottom: 0;
+        transform: translateX(0) rotate(45deg);
+      }
+      100% {
+        bottom: 100%;
+        transform: translateX(100px) rotate(45deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="apology-box">
+    <h1>I'm Truly Sorry neha..💕</h1>
+    <p>I messed up, and I deeply regret it.<br>Please forgive me.</p>
+    <button onclick="alert('Thank you for understanding. I won’t let you down again 💗')">Forgive Me?</button>
+  </div>
+
+  <!-- Floating hearts -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 4 + Math.random() * 4 + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 8000);
+    }
+
+    setInterval(createHeart, 400);
+  </script>
+
+</body>
+</html>
